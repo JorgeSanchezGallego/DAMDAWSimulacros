@@ -1,12 +1,10 @@
 "use client"
 
-import { useState } from 'react'
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
-import { Card } from '@/components/ui/card'
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
-import { Label } from '@/components/ui/label'
-import { ArrowLeft, ChevronLeft, ChevronRight, RotateCcw, CheckCircle2, XCircle } from 'lucide-react'
+import { useState } from "react"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
+import { ArrowLeft, ChevronLeft, ChevronRight, RotateCcw, CheckCircle2, XCircle } from "lucide-react"
 
 type Question = {
   id: number
@@ -23,42 +21,27 @@ const questions: Question[] = [
       "Data Definition Language",
       "Data Deletion Language",
       "Data Distribution Language",
-      "Data Duplication Language"
+      "Data Duplication Language",
     ],
-    correctAnswer: 0
+    correctAnswer: 0,
   },
   {
     id: 2,
     question: "¿Qué comando DDL se utiliza para crear una nueva tabla en la base de datos?",
-    options: [
-      "ADD TABLE",
-      "NEW TABLE",
-      "CREATE TABLE",
-      "MAKE TABLE"
-    ],
-    correctAnswer: 2
+    options: ["ADD TABLE", "NEW TABLE", "CREATE TABLE", "MAKE TABLE"],
+    correctAnswer: 2,
   },
   {
     id: 3,
     question: "¿Qué comando se utiliza para eliminar por completo una tabla y su estructura?",
-    options: [
-      "DELETE TABLE",
-      "DROP TABLE",
-      "REMOVE TABLE",
-      "ERASE TABLE"
-    ],
-    correctAnswer: 1
+    options: ["DELETE TABLE", "DROP TABLE", "REMOVE TABLE", "ERASE TABLE"],
+    correctAnswer: 1,
   },
   {
     id: 4,
     question: "¿Cuál es el comando DDL para modificar la estructura de una tabla existente?",
-    options: [
-      "ALTER TABLE",
-      "UPDATE TABLE",
-      "CHANGE TABLE",
-      "MODIFY TABLE"
-    ],
-    correctAnswer: 0
+    options: ["ALTER TABLE", "UPDATE TABLE", "CHANGE TABLE", "MODIFY TABLE"],
+    correctAnswer: 0,
   },
   {
     id: 5,
@@ -67,20 +50,15 @@ const questions: Question[] = [
       "Para ordenar los datos",
       "Para identificar de forma única cada fila en una tabla",
       "Para permitir valores duplicados",
-      "Para crear un índice secundario"
+      "Para crear un índice secundario",
     ],
-    correctAnswer: 1
+    correctAnswer: 1,
   },
   {
     id: 6,
     question: "¿Qué tipo de dato es más adecuado para almacenar un número de teléfono como texto?",
-    options: [
-      "BOOLEAN",
-      "VARCHAR",
-      "DATE",
-      "INT"
-    ],
-    correctAnswer: 1
+    options: ["BOOLEAN", "VARCHAR", "DATE", "INT"],
+    correctAnswer: 1,
   },
   {
     id: 7,
@@ -89,20 +67,16 @@ const questions: Question[] = [
       "Asegura que la columna siempre debe tener un valor",
       "Permite que la columna tenga valores nulos",
       "Establece un valor por defecto",
-      "Limita la longitud de los datos"
+      "Limita la longitud de los datos",
     ],
-    correctAnswer: 0
+    correctAnswer: 0,
   },
   {
     id: 8,
-    question: "¿Qué comando se usa para eliminar todos los datos de una tabla rápidamente, pero manteniendo su estructura?",
-    options: [
-      "DELETE * FROM",
-      "DROP TABLE",
-      "TRUNCATE TABLE",
-      "CLEAR TABLE"
-    ],
-    correctAnswer: 2
+    question:
+      "¿Qué comando se usa para eliminar todos los datos de una tabla rápidamente, pero manteniendo su estructura?",
+    options: ["DELETE * FROM", "DROP TABLE", "TRUNCATE TABLE", "CLEAR TABLE"],
+    correctAnswer: 2,
   },
   {
     id: 9,
@@ -111,20 +85,20 @@ const questions: Question[] = [
       "Elimina la tabla por completo junto con su estructura.",
       "Borra los datos y mantiene el contador de auto-incremento tal como estaba.",
       "Lanza un error porque no se puede usar en tablas con auto-incremento.",
-      "Borra los datos y reinicia el contador de auto-incremento."
+      "Borra los datos y reinicia el contador de auto-incremento.",
     ],
-    correctAnswer: 3
+    correctAnswer: 3,
   },
   {
     id: 10,
-    question: "¿Cómo se añade una nueva columna llamada \"email\" de tipo VARCHAR(100) a una tabla \"usuarios\"?",
+    question: '¿Cómo se añade una nueva columna llamada "email" de tipo VARCHAR(100) a una tabla "usuarios"?',
     options: [
       "UPDATE TABLE usuarios ADD email VARCHAR(100)",
       "MODIFY TABLE usuarios ADD COLUMN email VARCHAR(100)",
       "CREATE COLUMN email ON usuarios",
-      "ALTER TABLE usuarios ADD email VARCHAR(100)"
+      "ALTER TABLE usuarios ADD email VARCHAR(100)",
     ],
-    correctAnswer: 3
+    correctAnswer: 3,
   },
   {
     id: 11,
@@ -133,9 +107,9 @@ const questions: Question[] = [
       "Una clave que no puede contener valores nulos",
       "Una clave que enlaza dos tablas entre sí",
       "Una clave principal compuesta por varias columnas",
-      "Una clave que es única en toda la base de datos"
+      "Una clave que es única en toda la base de datos",
     ],
-    correctAnswer: 1
+    correctAnswer: 1,
   },
   {
     id: 12,
@@ -144,20 +118,20 @@ const questions: Question[] = [
       "Permitir valores duplicados",
       "Idéntico a PRIMARY KEY",
       "Establecer un valor por defecto si no se proporciona uno",
-      "Asegurar que todos los valores en una columna sean únicos"
+      "Asegurar que todos los valores en una columna sean únicos",
     ],
-    correctAnswer: 3
+    correctAnswer: 3,
   },
   {
     id: 13,
-    question: "¿Cómo se puede renombrar una tabla llamada \"clientes\" a \"compradores\"?",
+    question: '¿Cómo se puede renombrar una tabla llamada "clientes" a "compradores"?',
     options: [
       "ALTER TABLE clientes RENAME TO compradores",
       "UPDATE TABLE clientes SET NAME = compradores",
       "RENAME TABLE clientes TO compradores",
-      "Ambas 1 y 3 son correctas dependiendo del SGBD"
+      "Ambas 1 y 3 son correctas dependiendo del SGBD",
     ],
-    correctAnswer: 3
+    correctAnswer: 3,
   },
   {
     id: 14,
@@ -166,9 +140,9 @@ const questions: Question[] = [
       "No hay diferencia, son sinónimos",
       "VARCHAR es más rápido para consultas",
       "CHAR es para números, VARCHAR para texto",
-      "CHAR tiene una longitud fija, VARCHAR tiene una longitud variable"
+      "CHAR tiene una longitud fija, VARCHAR tiene una longitud variable",
     ],
-    correctAnswer: 3
+    correctAnswer: 3,
   },
   {
     id: 15,
@@ -177,9 +151,9 @@ const questions: Question[] = [
       "Para insertar 'valor' si no se especifica uno en un INSERT",
       "Para indicar que la columna es obligatoria",
       "Para que la columna no acepte otro valor",
-      "Para validar que el valor introducido sea 'valor'"
+      "Para validar que el valor introducido sea 'valor'",
     ],
-    correctAnswer: 0
+    correctAnswer: 0,
   },
   {
     id: 16,
@@ -188,20 +162,20 @@ const questions: Question[] = [
       "Valida que los valores de una columna cumplan una condición específica",
       "Asegura que una clave foránea es válida",
       "Verifica la sintaxis del comando SQL",
-      "Comprueba si la tabla existe"
+      "Comprueba si la tabla existe",
     ],
-    correctAnswer: 0
+    correctAnswer: 0,
   },
   {
     id: 17,
-    question: "¿Cómo se define una clave primaria compuesta por las columnas \"id_pedido\" e \"id_producto\"?",
+    question: '¿Cómo se define una clave primaria compuesta por las columnas "id_pedido" e "id_producto"?',
     options: [
       "COMPOSITE KEY (id_pedido, id_producto)",
       "PRIMARY KEY (id_pedido), PRIMARY KEY (id_producto)",
       "UNIQUE KEY (id_pedido, id_producto)",
-      "PRIMARY KEY (id_pedido, id_producto)"
+      "PRIMARY KEY (id_pedido, id_producto)",
     ],
-    correctAnswer: 3
+    correctAnswer: 3,
   },
   {
     id: 18,
@@ -210,20 +184,21 @@ const questions: Question[] = [
       "Evita que se borren filas en la tabla padre",
       "Borra automáticamente las filas coincidentes en la tabla hija al borrar en la tabla padre",
       "Establece a NULL las claves foráneas en la tabla hija",
-      "Muestra una advertencia al intentar borrar"
+      "Muestra una advertencia al intentar borrar",
     ],
-    correctAnswer: 1
+    correctAnswer: 1,
   },
   {
     id: 19,
-    question: "¿Qué comando se utiliza para añadir una restricción UNIQUE a la columna \"dni\" de una tabla \"empleados\" que ya existe?",
+    question:
+      '¿Qué comando se utiliza para añadir una restricción UNIQUE a la columna "dni" de una tabla "empleados" que ya existe?',
     options: [
       "ALTER TABLE empleados ADD CONSTRAINT UQ_dni UNIQUE (dni)",
       "ALTER TABLE empleados MODIFY COLUMN dni UNIQUE",
       "UPDATE TABLE empleados SET UNIQUE (dni)",
-      "CREATE UNIQUE INDEX UQ_dni ON empleados(dni)"
+      "CREATE UNIQUE INDEX UQ_dni ON empleados(dni)",
     ],
-    correctAnswer: 0
+    correctAnswer: 0,
   },
   {
     id: 20,
@@ -232,34 +207,30 @@ const questions: Question[] = [
       "Una vista almacena datos físicamente, una tabla no",
       "No se pueden hacer INSERT en una vista",
       "Las vistas son siempre más rápidas que las tablas",
-      "Una vista es el resultado de una consulta que se almacena como un objeto virtual, una tabla almacena los datos"
+      "Una vista es el resultado de una consulta que se almacena como un objeto virtual, una tabla almacena los datos",
     ],
-    correctAnswer: 3
-  }
+    correctAnswer: 3,
+  },
 ]
 
 export default function BDUnidad4Page() {
   const [currentQuestion, setCurrentQuestion] = useState(0)
-  const [selectedAnswers, setSelectedAnswers] = useState<(number | null)[]>(
-    new Array(questions.length).fill(null)
-  )
+  const [selectedAnswers, setSelectedAnswers] = useState<(number | null)[]>(new Array(questions.length).fill(null))
   const [showResults, setShowResults] = useState(false)
   const [score, setScore] = useState(0)
-  const [answeredQuestions, setAnsweredQuestions] = useState<boolean[]>(
-    new Array(questions.length).fill(false)
-  )
+  const [answeredQuestions, setAnsweredQuestions] = useState<boolean[]>(new Array(questions.length).fill(false))
 
   const handleAnswerSelect = (answerIndex: number) => {
     if (answeredQuestions[currentQuestion]) return
-    
+
     const newAnswers = [...selectedAnswers]
     newAnswers[currentQuestion] = answerIndex
     setSelectedAnswers(newAnswers)
-    
+
     const newAnswered = [...answeredQuestions]
     newAnswered[currentQuestion] = true
     setAnsweredQuestions(newAnswered)
-    
+
     if (answerIndex === questions[currentQuestion].correctAnswer) {
       setScore(score + 1)
     }
@@ -293,12 +264,12 @@ export default function BDUnidad4Page() {
     setAnsweredQuestions(new Array(questions.length).fill(false))
   }
 
-  const allQuestionsAnswered = selectedAnswers.every(answer => answer !== null)
+  const allQuestionsAnswered = selectedAnswers.every((answer) => answer !== null)
   const currentQuestionAnswered = selectedAnswers[currentQuestion] !== null
 
   if (showResults) {
     const percentage = ((score / questions.length) * 100).toFixed(1)
-    const passed = parseFloat(percentage) >= 50
+    const passed = Number.parseFloat(percentage) >= 50
 
     return (
       <div className="min-h-screen bg-background">
@@ -312,13 +283,9 @@ export default function BDUnidad4Page() {
 
           <Card className="p-8 bg-card border-border">
             <div className="text-center space-y-6">
-              <h2 className="text-3xl font-bold text-foreground">
-                Resultados del Simulacro
-              </h2>
-              
-              <div className={`text-6xl font-bold ${passed ? 'text-green-500' : 'text-red-500'}`}>
-                {percentage}%
-              </div>
+              <h2 className="text-3xl font-bold text-foreground">Resultados del Simulacro</h2>
+
+              <div className={`text-6xl font-bold ${passed ? "text-green-500" : "text-red-500"}`}>{percentage}%</div>
 
               <p className="text-xl text-muted-foreground">
                 Has acertado {score} de {questions.length} preguntas
@@ -330,11 +297,14 @@ export default function BDUnidad4Page() {
                   {questions.map((q, index) => {
                     const userAnswer = selectedAnswers[index]
                     const isCorrect = userAnswer === q.correctAnswer
-                    
+
                     return (
-                      <div key={q.id} className={`p-4 rounded-lg border ${isCorrect ? 'bg-green-500/10 border-green-500/30' : 'bg-red-500/10 border-red-500/30'}`}>
+                      <div
+                        key={q.id}
+                        className={`p-4 rounded-lg border ${isCorrect ? "bg-green-500/10 border-green-500/30" : "bg-red-500/10 border-red-500/30"}`}
+                      >
                         <p className="font-semibold text-sm mb-2">
-                          Pregunta {index + 1}: {isCorrect ? '✓' : '✗'}
+                          Pregunta {index + 1}: {isCorrect ? "✓" : "✗"}
                         </p>
                         <p className="text-sm text-muted-foreground mb-2">{q.question}</p>
                         {!isCorrect && (
@@ -375,25 +345,21 @@ export default function BDUnidad4Page() {
         <Card className="p-8 bg-card border-border">
           <div className="mb-6">
             <div className="flex justify-between items-center mb-4">
-              <h1 className="text-2xl font-bold text-foreground">
-                U4: Introducción a SQL: DDL
-              </h1>
+              <h1 className="text-2xl font-bold text-foreground">U4: Introducción a SQL: DDL</h1>
               <span className="text-sm text-muted-foreground">
                 Pregunta {currentQuestion + 1} de {questions.length}
               </span>
             </div>
             <div className="w-full bg-muted rounded-full h-2">
-              <div 
-                className="bg-blue-500 h-2 rounded-full transition-all duration-300"
+              <div
+                className="bg-blue-600 h-2 rounded-full transition-all duration-300"
                 style={{ width: `${((currentQuestion + 1) / questions.length) * 100}%` }}
               />
             </div>
           </div>
 
           <div className="space-y-6">
-            <h2 className="text-xl font-semibold text-foreground">
-              {question.question}
-            </h2>
+            <h2 className="text-xl font-semibold text-foreground">{question.question}</h2>
 
             <div className="space-y-3">
               {question.options.map((option, index) => {
@@ -410,13 +376,13 @@ export default function BDUnidad4Page() {
                     disabled={isAnswered}
                     className={`w-full text-left p-4 rounded-lg border-2 transition-all ${
                       showCorrect
-                        ? 'border-green-500 bg-green-500/10'
+                        ? "border-green-500 bg-green-500/10"
                         : showIncorrect
-                        ? 'border-red-500 bg-red-500/10'
-                        : isSelected
-                        ? 'border-blue-500 bg-blue-500/10'
-                        : 'border-border hover:border-blue-500/50'
-                    } ${isAnswered ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+                          ? "border-red-500 bg-red-500/10"
+                          : isSelected
+                            ? "border-blue-600 bg-blue-600/10"
+                            : "border-border hover:border-blue-600/50"
+                    } ${isAnswered ? "cursor-not-allowed" : "cursor-pointer"}`}
                   >
                     <div className="flex items-center justify-between">
                       <span className="text-foreground">{option}</span>
@@ -430,11 +396,7 @@ export default function BDUnidad4Page() {
           </div>
 
           <div className="flex justify-between mt-8">
-            <Button
-              onClick={handlePreviousQuestion}
-              disabled={currentQuestion === 0}
-              variant="outline"
-            >
+            <Button onClick={handlePreviousQuestion} disabled={currentQuestion === 0} variant="outline">
               <ChevronLeft className="mr-2 h-4 w-4" />
               Anterior
             </Button>
@@ -451,6 +413,7 @@ export default function BDUnidad4Page() {
               <Button
                 onClick={handleNextQuestion}
                 disabled={!currentQuestionAnswered}
+                className="bg-blue-600 hover:bg-blue-700"
               >
                 Siguiente
                 <ChevronRight className="ml-2 h-4 w-4" />
@@ -465,10 +428,10 @@ export default function BDUnidad4Page() {
                 onClick={() => setCurrentQuestion(index)}
                 className={`w-8 h-8 rounded-full text-sm font-medium transition-colors ${
                   index === currentQuestion
-                    ? 'bg-blue-500 text-white'
+                    ? "bg-blue-600 text-white"
                     : selectedAnswers[index] !== null
-                    ? 'bg-green-500/20 text-green-500 hover:bg-green-500/30'
-                    : 'bg-muted text-muted-foreground hover:bg-muted/80'
+                      ? "bg-green-500/20 text-green-500 hover:bg-green-500/30"
+                      : "bg-muted text-muted-foreground hover:bg-muted/80"
                 }`}
               >
                 {index + 1}

@@ -14,149 +14,189 @@ interface Question {
 
 const questions: Question[] = [
   {
-    question: "¿Qué efecto tiene declarar una variable como final dentro de un método?",
+    question: "¿Cuál es uno de los principios básicos de la prevención?",
     options: [
-      "Solo se puede usar dentro de un bucle",
-      "No puede modificarse una vez asignada",
-      "Puede cambiarse pero con advertencia",
-      "Se borra automáticamente al final del método",
+      "Maximizar la rentabilidad empresarial",
+      "Evitar los riesgos",
+      "Aumentar la producción",
+      "Contratar más personal",
     ],
     correctAnswer: 1,
   },
   {
-    question: "¿Cuál será el resultado de 20 % 6 en Java?",
-    options: ["0", "2", "4", "6"],
+    question: "¿Qué tipo de medida consiste en proporcionar equipos de protección individual?",
+    options: ["Eliminación del riesgo", "Protección individual", "Sustitución", "Formación técnica"],
     correctAnswer: 1,
   },
   {
-    question: "Si int x = 3; x += 4 * 2; ¿qué valor final tiene x?",
-    options: ["7", "11", "8", "12"],
+    question: "¿Qué color identifica la señalización de prohibición?",
+    options: ["Azul", "Rojo", "Verde", "Amarillo"],
     correctAnswer: 1,
   },
   {
-    question: "¿Qué operador se usa para comprobar si dos variables primitivas son distintas?",
-    options: ["==", "!=", "equals()", "<>"],
+    question: "¿Qué riesgo está relacionado con la postura y los movimientos repetitivos?",
+    options: ["Químico", "Biológico", "Ergonómico", "Medioambiental"],
+    correctAnswer: 2,
+  },
+  {
+    question: "¿Cuál de los siguientes es un riesgo medioambiental?",
+    options: ["Exposición a virus", "Ruido excesivo", "Carga física elevada", "Manipulación de productos químicos"],
     correctAnswer: 1,
   },
   {
-    question: "¿Qué tipo de dato permite almacenar valores como 2.718281828?",
-    options: ["int", "double", "long", "short"],
-    correctAnswer: 1,
+    question: "¿Qué objetivo tiene la señalización de seguridad?",
+    options: [
+      "Informar sobre el salario",
+      "Publicitar normas",
+      "Prevenir accidentes y riesgos",
+      "Indicar la evacuación económica",
+    ],
+    correctAnswer: 2,
   },
   {
-    question: "¿Qué instrucción se utiliza para ejecutar una alternativa u otra dependiendo de una condición?",
-    options: ["if...else", "break", "switch", "continue"],
+    question: "¿Qué riesgo es provocado por sustancias como disolventes o gases?",
+    options: ["Biológico", "Eléctrico", "Químico", "Ergonómico"],
+    correctAnswer: 2,
+  },
+  {
+    question: "¿Cuál es la duración mínima del nivel básico en prevención?",
+    options: ["50 horas", "100 horas", "200 horas", "20 horas"],
     correctAnswer: 0,
   },
   {
-    question: "¿Qué imprime el siguiente código? int n = 4; while (n > 6) { n--; } System.out.println(n);",
-    options: ["4", "5", "3", "2"],
+    question: "¿Quién realiza tareas básicas de prevención bajo supervisión?",
+    options: ["Comité de empresa", "Técnico de nivel básico", "Inspector laboral", "Médico del trabajo"],
+    correctAnswer: 1,
+  },
+  {
+    question: "¿Qué función tiene el Comité de Seguridad y Salud?",
+    options: ["Imponer sanciones", "Proponer medidas de prevención", "Organizar simulacros", "Asignar salarios"],
+    correctAnswer: 1,
+  },
+  {
+    question: "¿Quién designa a los Delegados de Prevención?",
+    options: [
+      "La Inspección de Trabajo",
+      "Según el tamaño de la empresa",
+      "El comité de empresa",
+      "El nivel superior de prevención",
+    ],
+    correctAnswer: 2,
+  },
+  {
+    question: "¿Qué técnica se aplica primero en caso de emergencia?",
+    options: ["RCP", "Evaluación de la situación", "Inmovilización", "Llamada al director"],
+    correctAnswer: 1,
+  },
+  {
+    question: "¿Qué maniobra se realiza en caso de atragantamiento?",
+    options: ["Compresiones torácicas", "Maniobra de Heimlich", "Respiración boca a boca", "Vendaje abdominal"],
+    correctAnswer: 1,
+  },
+  {
+    question: "¿Cuál es la prioridad en una quemadura de tercer grado?",
+    options: [
+      "Lavar con agua fría",
+      "No retirar ropa adherida y buscar asistencia médica",
+      "Aplicar crema hidratante",
+      "Frotar con alcohol",
+    ],
+    correctAnswer: 1,
+  },
+  {
+    question: "¿Qué tipo de hemorragia requiere presión directa con una compresa?",
+    options: ["Interna", "Venosa", "Capilar", "Arterial profunda"],
+    correctAnswer: 3,
+  },
+  {
+    question: "¿Cuál es el orden correcto en la cadena de supervivencia?",
+    options: [
+      "Socorrer – Evaluar – Alertar",
+      "Proteger – Alertar – Socorrer",
+      "Alertar – Socorrer – Transportar",
+      "Inmovilizar – Socorrer – Alertar",
+    ],
+    correctAnswer: 1,
+  },
+  {
+    question: "¿Qué herramienta se puede usar para improvisar una camilla?",
+    options: ["Silla", "Sábana fuerte", "Cinturón", "Alfombra"],
+    correctAnswer: 1,
+  },
+  {
+    question: "¿Cuál fue una de las primeras leyes laborales en la historia?",
+    options: ["Estatuto de los Trabajadores", "Ley de Fábricas de 1833", "Constitución de 1978", "Reforma de 1980"],
+    correctAnswer: 1,
+  },
+  {
+    question: "¿Cuál es un elemento esencial de la relación laboral?",
+    options: ["Libertad de mercado", "Propiedad del capital", "Ajenidad", "Cotización"],
+    correctAnswer: 2,
+  },
+  {
+    question: "¿Cuál de las siguientes no es una relación laboral?",
+    options: ["Contrato por obra", "Trabajo familiar sin remuneración", "Contrato indefinido", "Contrato temporal"],
+    correctAnswer: 1,
+  },
+  {
+    question: "¿Qué principio implica que, en caso de duda, se favorece al trabajador?",
+    options: ["Condición más beneficiosa", "In dubio pro operario", "Norma más favorable", "Irrenunciabilidad"],
+    correctAnswer: 1,
+  },
+  {
+    question: "¿Qué derecho fundamental permite al trabajador unirse a un sindicato?",
+    options: ["Derecho al trabajo", "Derecho a la sindicación", "Derecho a la formación", "Derecho a vacaciones"],
+    correctAnswer: 1,
+  },
+  {
+    question: "¿Qué norma tiene mayor jerarquía en el ordenamiento laboral español?",
+    options: ["Convenio colectivo", "Constitución Española", "Ley ordinaria", "Reglamento"],
+    correctAnswer: 1,
+  },
+  {
+    question: "¿Qué institución revisa los conflictos laborales individuales?",
+    options: ["Juzgados de lo Social", "Tribunal Supremo", "Tribunal de Cuentas", "Comisión Nacional del Trabajo"],
     correctAnswer: 0,
   },
   {
-    question: "¿Qué bucle se ejecuta al menos una vez antes de comprobar la condición?",
-    options: ["for", "do-while", "while", "if"],
-    correctAnswer: 1,
-  },
-  {
-    question: "¿Qué palabra se usa para detener por completo la ejecución de un bucle en curso?",
-    options: ["stopLoop", "continue", "break", "end"],
-    correctAnswer: 2,
-  },
-  {
-    question: "Si se omite break en un switch, ¿qué comportamiento se obtiene?",
-    options: [
-      "El programa se detiene",
-      "Se ejecutan los casos siguientes sin detenerse",
-      "Se lanza una excepción",
-      "No entra en ningún case",
-    ],
-    correctAnswer: 1,
-  },
-  {
-    question: "¿Qué palabra clave indica que un método devolverá un valor al finalizar?",
-    options: ["output", "return", "value", "yield"],
-    correctAnswer: 1,
-  },
-  {
-    question: "¿Qué muestra este fragmento? int sumar(int a, int b) { return a + b; } System.out.println(sumar(6, 9));",
-    options: ["69", "15", "96", "Error"],
-    correctAnswer: 1,
-  },
-  {
-    question: "¿Cómo se declara un método que no devuelve ningún valor?",
-    options: ["public method()", "void metodo()", "empty metodo()", "metodo returnless"],
-    correctAnswer: 1,
-  },
-  {
-    question: "¿Cuál de los siguientes identificadores NO es válido para un método en Java?",
-    options: ["iniciarSesion", "_guardarDatos", "total$ventas", "calcularPromedio"],
-    correctAnswer: 2,
-  },
-  {
-    question: "¿Qué palabra clave se usa para crear un nuevo objeto a partir de una clase?",
-    options: ["build", "new", "class", "instance"],
-    correctAnswer: 1,
-  },
-  {
-    question: "¿Qué palabra se usa para indicar que una clase hereda de otra?",
-    options: ["extends", "inheritsFrom", "superclass", "import"],
+    question: "¿Qué tipo de contrato no tiene fecha de finalización?",
+    options: ["Contrato indefinido", "Contrato eventual", "Contrato de formación", "Contrato por obra"],
     correctAnswer: 0,
   },
   {
-    question: "¿Qué beneficio ofrece la herencia?",
-    options: [
-      "Permite copiar métodos entre clases sin modificarlos",
-      "Permite reutilizar código y comportamientos comunes",
-      "Obliga a redefinir todos los métodos",
-      "Evita el uso de constructores",
-    ],
+    question: "¿Cuál es un elemento esencial del contrato de trabajo?",
+    options: ["Formación previa", "Consentimiento", "Bonificación salarial", "Vacaciones"],
     correctAnswer: 1,
   },
   {
-    question: "Si una clase implementa una interfaz, ¿qué ocurre?",
-    options: [
-      "Puede ignorar los métodos de la interfaz",
-      "Puede tener más de un constructor",
-      "Debe implementar los métodos definidos en ella",
-      "Se convierte en una clase abstracta",
-    ],
+    question: "¿Qué ocurre si un contrato que debería estar por escrito no lo está?",
+    options: ["Es nulo", "Se convierte en temporal", "Se presume indefinido", "No es válido"],
     correctAnswer: 2,
   },
   {
-    question: "¿Qué define la sobrecarga de métodos (overloading)?",
+    question: "¿Qué contrato combina formación teórica y práctica?",
     options: [
-      "Heredar métodos de una clase padre",
-      "Definir varios métodos con el mismo nombre y distintos parámetros",
-      "Reescribir métodos con la misma firma",
-      "Usar varios métodos a la vez",
+      "Contrato en prácticas",
+      "Contrato de formación y aprendizaje",
+      "Contrato por obra",
+      "Contrato de alta dirección",
     ],
     correctAnswer: 1,
   },
   {
-    question: "¿Qué bloque se usa para capturar una excepción lanzada?",
-    options: ["throw", "catch", "try", "error"],
+    question: "¿Qué entidad paga el salario en una relación triangular con ETT?",
+    options: ["Empresa usuaria", "Empresa de Trabajo Temporal", "Delegación provincial", "Seguridad Social"],
     correctAnswer: 1,
   },
   {
-    question: "¿Qué bloque de código se ejecuta siempre, ocurra o no una excepción?",
-    options: ["try", "catch", "finally", "default"],
-    correctAnswer: 2,
-  },
-  {
-    question: "¿Qué tipo de colección evita duplicados y no garantiza orden?",
-    options: ["List", "Map", "Set", "ArrayList"],
-    correctAnswer: 2,
-  },
-  {
-    question: "¿Cuál de las siguientes afirmaciones es cierta sobre HashMap y TreeMap?",
+    question: "¿Qué ventaja ofrece el teletrabajo?",
     options: [
-      "Ambos ordenan las claves alfabéticamente",
-      "TreeMap mantiene las claves ordenadas, HashMap no",
-      "HashMap es siempre más lento",
-      "TreeMap permite claves duplicadas",
+      "Reducción del salario",
+      "Incremento de horas",
+      "Conciliación personal y laboral",
+      "Supervisión constante",
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
   },
 ]
 
@@ -169,7 +209,7 @@ function shuffleArray<T>(array: T[]): T[] {
   return newArray
 }
 
-export default function ProgramacionQuiz() {
+export default function IPEQuiz() {
   const [started, setStarted] = useState(false)
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null)
@@ -223,29 +263,27 @@ export default function ProgramacionQuiz() {
 
           <div className="text-center space-y-6">
             <h1 className="text-4xl font-bold">
-              <span className="text-foreground">Programación</span>
+              <span className="text-foreground">IPE I</span>
             </h1>
-            <p className="text-muted-foreground text-lg">
-              Pon a prueba tus conocimientos en Java y programación orientada a objetos
-            </p>
+            <p className="text-muted-foreground text-lg">SIMULACRO FINAL 1º TRIMESTRE: UNIDADES 1, 2, 3, 4 y 5</p>
 
             <div className="space-y-4 text-left py-6">
               <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
+                <Check className="w-5 h-5 text-yellow-500 mt-0.5 shrink-0" />
                 <div>
-                  <p className="font-semibold text-foreground">23 Preguntas</p>
-                  <p className="text-sm text-muted-foreground">Conceptos esenciales de Java y POO</p>
+                  <p className="font-semibold text-foreground">30 Preguntas</p>
+                  <p className="text-sm text-muted-foreground">Prevención, legislación y relaciones laborales</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
+                <Check className="w-5 h-5 text-yellow-500 mt-0.5 shrink-0" />
                 <div>
                   <p className="font-semibold text-foreground">Preguntas Aleatorizadas</p>
                   <p className="text-sm text-muted-foreground">Cada sesión es diferente</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
+                <Check className="w-5 h-5 text-yellow-500 mt-0.5 shrink-0" />
                 <div>
                   <p className="font-semibold text-foreground">Retroalimentación Inmediata</p>
                   <p className="text-sm text-muted-foreground">Aprende mientras practicas</p>
@@ -256,7 +294,7 @@ export default function ProgramacionQuiz() {
             <Button
               onClick={startQuiz}
               size="lg"
-              className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold"
+              className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-semibold"
             >
               Comenzar Quiz
             </Button>
@@ -274,30 +312,28 @@ export default function ProgramacionQuiz() {
           <div className="text-center space-y-6">
             <h2 className="text-3xl font-bold text-foreground">Quiz Completado</h2>
             <div className="py-8">
-              <div className="text-6xl font-bold text-blue-500 mb-2">{percentage}%</div>
+              <div className="text-6xl font-bold text-yellow-500 mb-2">{percentage}%</div>
               <p className="text-xl text-muted-foreground">
                 {score} de {shuffledQuestions.length} correctas
               </p>
             </div>
 
             <div className="space-y-2">
-              {percentage >= 90 && (
-                <p className="text-lg text-foreground">Excelente. Dominas la programación en Java.</p>
-              )}
+              {percentage >= 90 && <p className="text-lg text-foreground">Excelente. Dominas la materia.</p>}
               {percentage >= 70 && percentage < 90 && (
-                <p className="text-lg text-foreground">Muy bien. Buen conocimiento de Java.</p>
+                <p className="text-lg text-foreground">Muy bien. Buen conocimiento.</p>
               )}
               {percentage >= 50 && percentage < 70 && (
-                <p className="text-lg text-foreground">Bien hecho. Sigue practicando.</p>
+                <p className="text-lg text-foreground">Bien hecho. Sigue repasando.</p>
               )}
-              {percentage < 50 && <p className="text-lg text-foreground">Sigue aprendiendo. Tú puedes.</p>}
+              {percentage < 50 && <p className="text-lg text-foreground">Sigue estudiando. Tú puedes.</p>}
             </div>
 
             <div className="space-y-3">
               <Button
                 onClick={startQuiz}
                 size="lg"
-                className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold"
+                className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-semibold"
               >
                 Intentar de Nuevo
               </Button>
@@ -336,7 +372,7 @@ export default function ProgramacionQuiz() {
 
           <div className="h-2 bg-muted rounded-full overflow-hidden">
             <div
-              className="h-full bg-purple-500 transition-all duration-300"
+              className="h-full bg-yellow-500 transition-all duration-300"
               style={{ width: `${((currentQuestionIndex + 1) / shuffledQuestions.length) * 100}%` }}
             />
           </div>
@@ -357,9 +393,9 @@ export default function ProgramacionQuiz() {
                   disabled={showFeedback}
                   className={`
                     w-full text-left p-4 rounded-lg border-2 transition-all
-                    ${!showFeedback && "hover:border-purple-500 hover:bg-accent cursor-pointer"}
+                    ${!showFeedback && "hover:border-yellow-500 hover:bg-accent cursor-pointer"}
                     ${showFeedback && "cursor-not-allowed"}
-                    ${isSelected && !showFeedback && "border-purple-500 bg-accent"}
+                    ${isSelected && !showFeedback && "border-yellow-500 bg-accent"}
                     ${showCorrect && "border-green-500 bg-green-500/10"}
                     ${showIncorrect && "border-red-500 bg-red-500/10"}
                     ${!isSelected && !showCorrect && !showIncorrect && "border-border bg-card"}
@@ -384,7 +420,7 @@ export default function ProgramacionQuiz() {
                   <span className="text-red-500 font-semibold">Incorrecto</span>
                 )}
               </div>
-              <Button onClick={handleNext} className="bg-purple-500 hover:bg-purple-600 text-white">
+              <Button onClick={handleNext} className="bg-yellow-500 hover:bg-yellow-600 text-white">
                 {currentQuestionIndex < shuffledQuestions.length - 1 ? "Siguiente" : "Ver Resultados"}
               </Button>
             </div>
