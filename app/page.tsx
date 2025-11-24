@@ -100,11 +100,11 @@ const subjects = [
     hoverBorder: "hover:border-yellow-500/50",
     simulacros: {
       junio: "/quiz/ipe-1/junio",
-      diciembreI: null,
+      diciembreI: "/quiz/ipe-1/diciembre-1", // Activated Diciembre I test
       diciembreII: null,
     },
     customLabels: {
-      diciembreI: "Test Unidades 1-5",
+      diciembreI: "Simulacro Diciembre I", // Changed label from "Test Unidades 1-5"
     },
     extraSimulacros: [{ label: "Test Unidades 1-5", link: "/quiz/ipe-1/unidades-1-5" }],
   },
