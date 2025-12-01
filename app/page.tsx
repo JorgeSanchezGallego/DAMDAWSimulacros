@@ -95,6 +95,7 @@ const subjects = [
       diciembreII: null,
     },
     specialLabel: "Proyecto II",
+    extraSimulacros: [{ label: "Kahoot Linux", link: "/quiz/sistemas-informaticos/kahoot-linux" }],
   },
   {
     id: "ipe-1",
