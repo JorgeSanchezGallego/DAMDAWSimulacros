@@ -27,7 +27,7 @@ const subjects = [
     simulacros: {
       junio: "/quiz/programacion/junio",
       diciembreI: "/quiz/programacion/diciembre-1",
-      diciembreII: null,
+      diciembreII: "/quiz/programacion/diciembre-2",
     },
   },
   {
