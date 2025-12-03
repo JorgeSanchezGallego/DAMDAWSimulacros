@@ -68,8 +68,8 @@ const subjects = [
     extraSimulacros: [
       { label: "U4: Introducción a SQL: DDL", link: "/quiz/bases-datos/unidad-4" },
       { label: "U5: Lenguaje SQL: DML", link: "/quiz/bases-datos/unidad-5" },
-      { label: "Kahoot 2/12 parte 1", link: null },
-      { label: "Kahoot 2/12 parte 2", link: null },
+      { label: "Kahoot 2/12 parte 1", link: "/quiz/bases-datos/kahoot-0212-1" },
+      { label: "Kahoot 2/12 parte 2", link: "/quiz/bases-datos/kahoot-0212-2" },
       { label: "Simulacro Diciembre I", link: "/quiz/bases-datos/simulacro-diciembre-1" },
     ],
   },
