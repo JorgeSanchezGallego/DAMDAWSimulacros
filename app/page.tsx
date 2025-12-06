@@ -72,6 +72,7 @@ const subjects = [
       { label: "Kahoot 2/12 parte 1", link: "/quiz/bases-datos/kahoot-0212-1" },
       { label: "Kahoot 2/12 parte 2", link: "/quiz/bases-datos/kahoot-0212-2" },
       { label: "Simulacro Diciembre I", link: "/quiz/bases-datos/simulacro-diciembre-1" },
+      { label: "REPASO Test 2", link: "/quiz/bases-datos/REPASO_Test2" },
       { label: "TEST EXTRA", link: "/quiz/bases-datos/test-extra", color: "text-green-500 hover:text-green-400" },
     ],
   },
