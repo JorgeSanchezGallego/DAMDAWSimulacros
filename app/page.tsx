@@ -84,8 +84,8 @@ const subjects = [
     color: "bg-green-500",
     hoverBorder: "hover:border-green-500/50",
     simulacros: {
-      junio: "/quiz/python",
-      diciembreI: null,
+      junio: "/quiz/python/junio-1",
+      diciembreI: "/quiz/python/diciembre-1",
       diciembreII: null,
     },
   },
