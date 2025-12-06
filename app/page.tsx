@@ -97,7 +97,7 @@ const subjects = [
     hoverBorder: "hover:border-blue-500/50",
     simulacros: {
       junio: "/quiz/sistemas-informaticos",
-      diciembreI: null,
+      diciembreI: "/quiz/sistemas-informaticos/diciembre-1", // Enabled link to Simulacro Diciembre I
       diciembreII: null,
     },
     specialLabel: "Proyecto II",
