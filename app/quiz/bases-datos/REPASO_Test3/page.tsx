@@ -1,22 +1,15 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { useState } from "react"
 import { Card } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { CheckCircle2, XCircle, ChevronLeft } from "lucide-react"
 import Link from "next/link"
-import { ArrowLeft, CheckCircle2, XCircle } from "lucide-react"
 
-interface Question {
-  id: number
-  question: string
-  options: string[]
-  correctAnswer: number
-}
-
-const questions: Question[] = [
+const questions = [
   {
-    id: 1,
-    question: "INSERT INTO Clientes (IDCliente, Nombre, Email) VALUES (5, 'Luis', 'luis@example.com') ON DUPLICATE KEY UPDATE Email = VALUES(Email)",
+    question:
+      "INSERT INTO Clientes (IDCliente, Nombre, Email) VALUES (5, 'Luis', 'luis@example.com') ON DUPLICATE KEY UPDATE Email = VALUES(Email)",
     options: [
       "No realiza ninguna operación si el ID existe",
       "Actualiza el email del cliente si el ID ya existe",
@@ -26,7 +19,6 @@ const questions: Question[] = [
     correctAnswer: 1,
   },
   {
-    id: 2,
     question: "SELECT Nombre FROM Clientes ORDER BY Nombre ASC",
     options: [
       "Devuelve los nombres de clientes ordenados alfabéticamente ascendente",
@@ -37,8 +29,8 @@ const questions: Question[] = [
     correctAnswer: 0,
   },
   {
-    id: 3,
-    question: "¿Para qué tipo de tareas resulta especialmente adecuado definir eventos recurrentes en la base de datos?",
+    question:
+      "¿Para qué tipo de tareas resulta especialmente adecuado definir eventos recurrentes en la base de datos?",
     options: [
       "Crear tablas temporales puntuales",
       "Rutinas periódicas como backups, limpieza de datos o generación de informes",
@@ -48,14 +40,19 @@ const questions: Question[] = [
     correctAnswer: 1,
   },
   {
-    id: 4,
-    question: "¿Qué regla de integridad impide que un atributo de la clave primaria tome el valor NULL?",
-    options: ["Integridad referencial", "Regla UNIQUE", "Integridad de entidad", "Regla CHECK"],
+    question:
+      "¿Qué regla de integridad impide que un atributo de la clave primaria tome el valor NULL?",
+    options: [
+      "Integridad referencial",
+      "Regla UNIQUE",
+      "Integridad de entidad",
+      "Regla CHECK",
+    ],
     correctAnswer: 2,
   },
   {
-    id: 5,
-    question: "¿Qué característica destaca en una base de datos frente a un conjunto de ficheros independientes?",
+    question:
+      "¿Qué característica destaca en una base de datos frente a un conjunto de ficheros independientes?",
     options: [
       "Mayor redundancia de datos",
       "Imposibilidad de acceso concurrente",
@@ -65,14 +62,19 @@ const questions: Question[] = [
     correctAnswer: 3,
   },
   {
-    id: 6,
-    question: "¿Qué comando DML se utiliza para cargar datos desde un archivo externo a una tabla?",
-    options: ["LOAD DATA INFILE", "INSERT DATA", "UPLOAD DATA", "IMPORT DATA"],
+    question:
+      "¿Qué comando DML se utiliza para cargar datos desde un archivo externo a una tabla?",
+    options: [
+      "LOAD DATA INFILE",
+      "INSERT DATA",
+      "UPLOAD DATA",
+      "IMPORT DATA",
+    ],
     correctAnswer: 0,
   },
   {
-    id: 7,
-    question: "SELECT A.NombreAlumno, C.NombreCurso FROM Alumnos A JOIN Matriculas M ON A.IDAlumno = M.IDAlumno JOIN Cursos C ON M.IDCurso = C.IDCurso",
+    question:
+      "SELECT A.NombreAlumno, C.NombreCurso FROM Alumnos A JOIN Matriculas M ON A.IDAlumno = M.IDAlumno JOIN Cursos C ON M.IDCurso = C.IDCurso",
     options: [
       "Muestra qué cursos está matriculado cada alumno",
       "Elimina cursos sin alumnos",
@@ -82,8 +84,8 @@ const questions: Question[] = [
     correctAnswer: 0,
   },
   {
-    id: 8,
-    question: "¿Qué efecto tiene la sentencia REVOKE sobre los privilegios de un usuario en la base de datos?",
+    question:
+      "¿Qué efecto tiene la sentencia REVOKE sobre los privilegios de un usuario en la base de datos?",
     options: [
       "Retira solo los permisos indicados, manteniendo el resto",
       "Concede todos los permisos posibles",
@@ -93,8 +95,8 @@ const questions: Question[] = [
     correctAnswer: 0,
   },
   {
-    id: 9,
-    question: "SELECT P.NombreProducto, Pro.NombreProveedor FROM Productos P RIGHT JOIN Proveedores Pro ON P.IDProveedor = Pro.IDProveedor",
+    question:
+      "SELECT P.NombreProducto, Pro.NombreProveedor FROM Productos P RIGHT JOIN Proveedores Pro ON P.IDProveedor = Pro.IDProveedor",
     options: [
       "Devuelve todos los proveedores aunque no tengan productos",
       "Crea proveedores nuevos",
@@ -104,26 +106,31 @@ const questions: Question[] = [
     correctAnswer: 0,
   },
   {
-    id: 10,
-    question: "¿Qué tipo de clave garantiza que no haya dos filas iguales respecto a ese conjunto de atributos y que además sea irreducible?",
-    options: ["Clave secundaria", "Clave primaria", "Clave ajena", "Clave candidata"],
+    question:
+      "¿Qué tipo de clave garantiza que no haya dos filas iguales respecto a ese conjunto de atributos y que además sea irreducible?",
+    options: [
+      "Clave secundaria",
+      "Clave primaria",
+      "Clave ajena",
+      "Clave candidata",
+    ],
     correctAnswer: 3,
   },
   {
-    id: 11,
-    question: "¿Qué comando se utiliza para eliminar todos los registros de una tabla rápidamente?",
+    question:
+      "¿Qué comando se utiliza para eliminar todos los registros de una tabla rápidamente?",
     options: ["TRUNCATE", "CLEAR", "DELETE", "DROP"],
     correctAnswer: 0,
   },
   {
-    id: 12,
-    question: "¿Qué comando DQL se utiliza para seleccionar columnas específicas de una tabla?",
+    question:
+      "¿Qué comando DQL se utiliza para seleccionar columnas específicas de una tabla?",
     options: ["QUERY", "GET", "SELECT", "FETCH"],
     correctAnswer: 2,
   },
   {
-    id: 13,
-    question: "¿Qué representa una relación ISA en un diagrama MER/MERE?",
+    question:
+      "¿Qué representa una relación ISA en un diagrama MER/MERE?",
     options: [
       "Una jerarquía de generalización/especialización entre superclase y subclases",
       "Una agregación entre relaciones",
@@ -133,8 +140,8 @@ const questions: Question[] = [
     correctAnswer: 0,
   },
   {
-    id: 14,
-    question: "CREATE TABLE Clientes (IDCliente INT PRIMARY KEY, Nombre VARCHAR(100) NOT NULL, Email VARCHAR(100) UNIQUE)",
+    question:
+      "CREATE TABLE Clientes (IDCliente INT PRIMARY KEY, Nombre VARCHAR(100) NOT NULL, Email VARCHAR(100) UNIQUE)",
     options: [
       "Elimina la tabla Clientes",
       "Crea una tabla base llamada Clientes",
@@ -144,8 +151,8 @@ const questions: Question[] = [
     correctAnswer: 1,
   },
   {
-    id: 15,
-    question: "SELECT E.NombreEmpleado, D.NombreDepartamento, S.Sueldo FROM Empleados E JOIN Departamentos D ON E.IDDepartamento = D.IDDepartamento JOIN Salarios S ON E.IDEmpleado = S.IDEmpleado",
+    question:
+      "SELECT E.NombreEmpleado, D.NombreDepartamento, S.Sueldo FROM Empleados E JOIN Departamentos D ON E.IDDepartamento = D.IDDepartamento JOIN Salarios S ON E.IDEmpleado = S.IDEmpleado",
     options: [
       "Cuenta empleados por departamento",
       "Elimina empleados sin sueldo",
@@ -155,13 +162,17 @@ const questions: Question[] = [
     correctAnswer: 2,
   },
   {
-    id: 16,
-    question: "¿Qué comando DML se utiliza para combinar INSERT y UPDATE en una sola operación en MySQL?",
-    options: ["MERGE", "FUSE", "INSERT ... ON DUPLICATE KEY UPDATE", "INSERT OR UPDATE"],
+    question:
+      "¿Qué comando DML se utiliza para combinar INSERT y UPDATE en una sola operación en MySQL?",
+    options: [
+      "MERGE",
+      "FUSE",
+      "INSERT ... ON DUPLICATE KEY UPDATE",
+      "INSERT OR UPDATE",
+    ],
     correctAnswer: 2,
   },
   {
-    id: 17,
     question: "SELECT MAX(Precio) FROM Productos",
     options: [
       "Devuelve el precio mínimo",
@@ -172,8 +183,8 @@ const questions: Question[] = [
     correctAnswer: 3,
   },
   {
-    id: 18,
-    question: "¿Qué describe una restricción de inclusividad en el MERE?",
+    question:
+      "¿Qué describe una restricción de inclusividad en el MERE?",
     options: [
       "Que para participar en una relación una entidad debe haber participado antes en otra",
       "Que una entidad puede estar en varias subclases simultáneamente",
@@ -183,8 +194,8 @@ const questions: Question[] = [
     correctAnswer: 0,
   },
   {
-    id: 19,
-    question: "¿Qué requisito caracteriza a la Primera Forma Normal (1FN)?",
+    question:
+      "¿Qué requisito caracteriza a la Primera Forma Normal (1FN)?",
     options: [
       "Debe existir una clave ajena en cada tabla",
       "Cada atributo debe depender solo de la clave",
@@ -194,7 +205,6 @@ const questions: Question[] = [
     correctAnswer: 3,
   },
   {
-    id: 20,
     question: "SELECT * FROM Clientes WHERE Ciudad = 'Madrid'",
     options: [
       "Actualiza la ciudad de los clientes a Madrid",
@@ -205,7 +215,6 @@ const questions: Question[] = [
     correctAnswer: 1,
   },
   {
-    id: 21,
     question: "CREATE INDEX idx_clientes_email ON Clientes(Email)",
     options: [
       "Crea un índice para acelerar búsquedas por Email",
@@ -216,8 +225,8 @@ const questions: Question[] = [
     correctAnswer: 0,
   },
   {
-    id: 22,
-    question: "¿Qué indica la participación total de una entidad en una relación en el MER/MERE?",
+    question:
+      "¿Qué indica la participación total de una entidad en una relación en el MER/MERE?",
     options: [
       "Que la relación es siempre N:M",
       "Que ninguna instancia puede participar en la relación",
@@ -227,7 +236,6 @@ const questions: Question[] = [
     correctAnswer: 3,
   },
   {
-    id: 23,
     question: "SELECT DISTINCT Categoria FROM Productos",
     options: [
       "Elimina categorías duplicadas de la tabla",
@@ -238,14 +246,19 @@ const questions: Question[] = [
     correctAnswer: 2,
   },
   {
-    id: 24,
-    question: "¿Qué tipo de bloqueo permite que varias transacciones puedan leer al mismo tiempo una misma fila o tabla, pero sin modificarla?",
-    options: ["Bloqueo compartido", "Bloqueo intencional", "Bloqueo de escalada", "Bloqueo exclusivo"],
+    question:
+      "¿Qué tipo de bloqueo permite que varias transacciones puedan leer al mismo tiempo una misma fila o tabla, pero sin modificarla?",
+    options: [
+      "Bloqueo compartido",
+      "Bloqueo intencional",
+      "Bloqueo de escalada",
+      "Bloqueo exclusivo",
+    ],
     correctAnswer: 0,
   },
   {
-    id: 25,
-    question: "UPDATE Productos SET Stock = Stock - 1 WHERE IDProducto = 10",
+    question:
+      "UPDATE Productos SET Stock = Stock - 1 WHERE IDProducto = 10",
     options: [
       "Duplica el stock del producto 10",
       "Elimina el producto 10",
@@ -255,8 +268,8 @@ const questions: Question[] = [
     correctAnswer: 3,
   },
   {
-    id: 26,
-    question: "¿Cuál es la función principal de un Sistema de Gestión de Bases de Datos (SGBD)?",
+    question:
+      "¿Cuál es la función principal de un Sistema de Gestión de Bases de Datos (SGBD)?",
     options: [
       "Fabricar hardware de almacenamiento",
       "Diseñar interfaces gráficas",
@@ -266,20 +279,25 @@ const questions: Question[] = [
     correctAnswer: 2,
   },
   {
-    id: 27,
-    question: "¿Qué restricción se utiliza para impedir que una columna acepte valores repetidos, salvo posibles nulos?",
+    question:
+      "¿Qué restricción se utiliza para impedir que una columna acepte valores repetidos, salvo posibles nulos?",
     options: ["CHECK", "NOT NULL", "UNIQUE", "PRIMARY KEY"],
     correctAnswer: 2,
   },
   {
-    id: 28,
-    question: "¿Qué opción ON DELETE elimina también las filas relacionadas en la tabla secundaria cuando se borra una fila de la tabla principal?",
-    options: ["ON DELETE NO ACTION", "ON DELETE SET DEFAULT", "ON DELETE SET NULL", "ON DELETE CASCADE"],
+    question:
+      "¿Qué opción ON DELETE elimina también las filas relacionadas en la tabla secundaria cuando se borra una fila de la tabla principal?",
+    options: [
+      "ON DELETE NO ACTION",
+      "ON DELETE SET DEFAULT",
+      "ON DELETE SET NULL",
+      "ON DELETE CASCADE",
+    ],
     correctAnswer: 3,
   },
   {
-    id: 29,
-    question: "¿Qué es una tabla base en una base de datos relacional?",
+    question:
+      "¿Qué es una tabla base en una base de datos relacional?",
     options: [
       "Una tabla que solo almacena el resultado de una consulta",
       "Una tabla temporal que crea el sistema",
@@ -289,106 +307,102 @@ const questions: Question[] = [
     correctAnswer: 3,
   },
   {
-    id: 30,
-    question: "En el ejemplo de (Empleado que Diseña o Fabrica Productos), ¿cuál es la diferencia clave entre Exclusión (línea discontinua) y Exclusividad?",
+    question:
+      "En el ejemplo de (Empleado que Diseña o Fabrica Productos), ¿cuál es la diferencia clave entre Exclusión (línea discontinua) y Exclusividad?",
     options: [
       "Exclusión es permanente y Exclusividad permite cambios futuros.",
       "Exclusión usa triángulo ISA y Exclusividad no.",
-      "Exclusividad es \"nunca ambas\" y Exclusión es \"no al mismo tiempo, pero sí en secuencia\".",
+      "Exclusividad es 'nunca ambas' y Exclusión es 'no al mismo tiempo, pero sí en secuencia'.",
       "Ambas requieren flecha con cardinalidad mínima.",
     ],
     correctAnswer: 2,
   },
-]
+];
 
-export default function PythonQuiz() {
+export default function KahootBBDD0212Part1() {
   const [currentQuestion, setCurrentQuestion] = useState(0)
-  const [score, setScore] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null)
-  const [isAnswered, setIsAnswered] = useState(false)
-  const [quizFinished, setQuizFinished] = useState(false)
-  const [shuffledQuestions, setShuffledQuestions] = useState<Question[]>([])
-
-  useEffect(() => {
-    const shuffled = [...questions].sort(() => Math.random() - 0.5)
-    setShuffledQuestions(shuffled)
-  }, [])
-
-  if (shuffledQuestions.length === 0) {
-    return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <p className="text-foreground">Cargando...</p>
-      </div>
-    )
-  }
+  const [answeredQuestions, setAnsweredQuestions] = useState<boolean[]>(Array(questions.length).fill(false))
+  const [showResult, setShowResult] = useState(false)
+  const [score, setScore] = useState(0)
+  const [incorrectCount, setIncorrectCount] = useState(0)
 
   const handleAnswer = (answerIndex: number) => {
-    if (isAnswered) return
+    if (answeredQuestions[currentQuestion]) return
 
     setSelectedAnswer(answerIndex)
-    setIsAnswered(true)
 
-    if (answerIndex === shuffledQuestions[currentQuestion].correctAnswer) {
+    const newAnswered = [...answeredQuestions]
+    newAnswered[currentQuestion] = true
+    setAnsweredQuestions(newAnswered)
+
+    if (answerIndex === questions[currentQuestion].correctAnswer) {
       setScore(score + 1)
+    } else {
+      setIncorrectCount(incorrectCount + 1)
     }
   }
 
-  const handleNext = () => {
-    if (currentQuestion < shuffledQuestions.length - 1) {
+  const previousQuestion = () => {
+    if (currentQuestion > 0) {
+      setCurrentQuestion(currentQuestion - 1)
+      setSelectedAnswer(null)
+    }
+  }
+
+  const nextQuestion = () => {
+    if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1)
       setSelectedAnswer(null)
-      setIsAnswered(false)
     } else {
-      setQuizFinished(true)
+      setShowResult(true)
     }
   }
 
   const resetQuiz = () => {
-    const shuffled = [...questions].sort(() => Math.random() - 0.5)
-    setShuffledQuestions(shuffled)
     setCurrentQuestion(0)
-    setScore(0)
     setSelectedAnswer(null)
-    setIsAnswered(false)
-    setQuizFinished(false)
+    setShowResult(false)
+    setScore(0)
+    setIncorrectCount(0)
+    setAnsweredQuestions(Array(questions.length).fill(false))
   }
 
-  if (quizFinished) {
-    const percentage = Math.round((score / shuffledQuestions.length) * 100)
-    let message = ""
-    if (percentage >= 90) message = "Excelente! Dominas Python"
-    else if (percentage >= 70) message = "Muy bien! Buen conocimiento de Python"
-    else if (percentage >= 50) message = "Bien! Sigue practicando"
-    else message = "Necesitas repasar más Python"
+  if (showResult) {
+    const correctedScore = score - incorrectCount / 3
+    const maxScore = questions.length
+    const percentage = ((correctedScore / maxScore) * 100).toFixed(1)
 
     return (
-      <div className="min-h-screen bg-background">
-        <div className="container mx-auto px-4 py-8 max-w-3xl">
-          <Link href="/">
-            <Button variant="ghost" className="mb-6">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Volver al inicio
-            </Button>
-          </Link>
-
-          <Card className="p-8 bg-card border-border text-center">
-            <h2 className="text-3xl font-bold text-foreground mb-4">Quiz Completado</h2>
-            <div className="my-8">
-              <div className="text-6xl font-bold text-green-500 mb-2">{percentage}%</div>
-              <p className="text-xl text-foreground mb-2">
-                {score} de {shuffledQuestions.length} correctas
+      <div className="min-h-screen bg-background p-4 md:p-8">
+        <div className="max-w-3xl mx-auto">
+          <Card className="p-8 bg-card border-border">
+            <div className="text-center space-y-6">
+              <h2 className="text-3xl font-bold text-foreground">Resultados del Simulacro</h2>
+              <div className="text-6xl font-bold text-blue-600">{percentage}%</div>
+              <p className="text-xl text-muted-foreground">
+                Has acertado {score} de {questions.length} preguntas
               </p>
-              <p className="text-lg text-muted-foreground">{message}</p>
-            </div>
-            <div className="flex gap-4 justify-center">
-              <Button onClick={resetQuiz} size="lg" className="bg-green-500 hover:bg-green-600">
-                Reintentar
-              </Button>
-              <Link href="/">
-                <Button variant="outline" size="lg">
-                  Volver al inicio
+              <div className="space-y-2 text-sm text-muted-foreground">
+                <p>
+                  Aciertos: <span className="text-green-500 font-semibold">{score}</span> | Fallos:{" "}
+                  <span className="text-red-500 font-semibold">{incorrectCount}</span>
+                </p>
+                <p className="text-xs italic">
+                  Puntuación con fórmula de corrección: {correctedScore.toFixed(2)} / {maxScore}
+                </p>
+                <p className="text-xs text-muted-foreground/70">(Fórmula: Aciertos - Fallos/3)</p>
+              </div>
+              <div className="flex gap-4 justify-center flex-wrap">
+                <Button onClick={resetQuiz} size="lg" className="bg-blue-600 hover:bg-blue-700">
+                  Reintentar
                 </Button>
-              </Link>
+                <Link href="/">
+                  <Button variant="outline" size="lg">
+                    Volver al inicio
+                  </Button>
+                </Link>
+              </div>
             </div>
           </Card>
         </div>
@@ -396,82 +410,94 @@ export default function PythonQuiz() {
     )
   }
 
-  const question = shuffledQuestions[currentQuestion]
+  const question = questions[currentQuestion]
+  const isAnswered = answeredQuestions[currentQuestion]
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8 max-w-3xl">
-        <Link href="/">
-          <Button variant="ghost" className="mb-6">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Volver al inicio
-          </Button>
-        </Link>
-
-        <div className="mb-8">
-          <div className="flex justify-between items-center mb-4">
-            <h1 className="text-2xl font-bold text-foreground">Quiz de Python</h1>
-            <div className="text-lg font-semibold text-green-500">
-              Puntuación: {score}/{shuffledQuestions.length}
-            </div>
+    <div className="min-h-screen bg-background p-4 md:p-8">
+      <div className="max-w-3xl mx-auto space-y-6">
+        <div className="flex items-center justify-between">
+          <Link href="/">
+            <Button variant="ghost" size="sm">
+              <ChevronLeft className="w-4 h-4 mr-2" />
+              Volver
+            </Button>
+          </Link>
+          <div className="flex items-center gap-2">
+            <span className="text-sm font-medium text-muted-foreground">
+              Pregunta {currentQuestion + 1} de {questions.length}
+            </span>
+            <span className="text-sm font-medium text-blue-600">
+              {answeredQuestions.filter((a) => a).length} respondidas
+            </span>
           </div>
-          <div className="w-full bg-muted rounded-full h-2">
-            <div
-              className="bg-green-500 h-2 rounded-full transition-all duration-300"
-              style={{ width: `${((currentQuestion + 1) / shuffledQuestions.length) * 100}%` }}
-            />
-          </div>
-          <p className="text-sm text-muted-foreground mt-2">
-            Pregunta {currentQuestion + 1} de {shuffledQuestions.length}
-          </p>
         </div>
 
-        <Card className="p-6 bg-card border-border mb-6">
-          <h2 className="text-xl font-semibold text-foreground mb-6">{question.question}</h2>
+        <Card className="p-6 md:p-8 bg-card border-border">
+          <div className="space-y-6">
+            <div className="flex items-start justify-between gap-4">
+              <h2 className="text-xl md:text-2xl font-semibold text-foreground flex-1">{question.question}</h2>
+              <div className="text-sm font-medium text-muted-foreground whitespace-nowrap">
+                {score}/{questions.length}
+              </div>
+            </div>
 
-          <div className="space-y-3">
-            {question.options.map((option, index) => {
-              const isCorrect = index === question.correctAnswer
-              const isSelected = index === selectedAnswer
-              let buttonClass = "w-full justify-start text-left h-auto py-4 px-6 "
+            <div className="space-y-3">
+              {question.options.map((option, index) => {
+                const isSelected = selectedAnswer === index
+                const isCorrect = index === question.correctAnswer
+                const showCorrect = isAnswered && isCorrect
+                const showIncorrect = isAnswered && isSelected && !isCorrect
 
-              if (isAnswered) {
-                if (isCorrect) {
-                  buttonClass += "bg-green-500/20 border-green-500 text-green-500 hover:bg-green-500/20"
-                } else if (isSelected) {
-                  buttonClass += "bg-red-500/20 border-red-500 text-red-500 hover:bg-red-500/20"
-                } else {
-                  buttonClass += "opacity-50"
-                }
-              } else {
-                buttonClass += "hover:bg-green-500/10 hover:border-green-500"
-              }
+                return (
+                  <button
+                    key={index}
+                    onClick={() => handleAnswer(index)}
+                    disabled={isAnswered}
+                    className={`w-full text-left p-4 rounded-lg border-2 transition-all ${
+                      showCorrect
+                        ? "border-green-500 bg-green-500/10"
+                        : showIncorrect
+                          ? "border-red-500 bg-red-500/10"
+                          : isSelected
+                            ? "border-blue-600 bg-blue-600/10"
+                            : "border-border hover:border-blue-600/50 bg-card"
+                    } ${isAnswered ? "cursor-not-allowed" : "cursor-pointer"}`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="text-foreground">{option}</span>
+                      {showCorrect && <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 ml-2" />}
+                      {showIncorrect && <XCircle className="w-5 h-5 text-red-500 flex-shrink-0 ml-2" />}
+                    </div>
+                  </button>
+                )
+              })}
+            </div>
 
-              return (
-                <Button
-                  key={index}
-                  variant="outline"
-                  className={buttonClass}
-                  onClick={() => handleAnswer(index)}
-                  disabled={isAnswered}
-                >
-                  <span className="flex items-center gap-3 w-full">
-                    <span className="font-bold">{String.fromCharCode(65 + index)}.</span>
-                    <span className="flex-1">{option}</span>
-                    {isAnswered && isCorrect && <CheckCircle2 className="h-5 w-5" />}
-                    {isAnswered && isSelected && !isCorrect && <XCircle className="h-5 w-5" />}
-                  </span>
-                </Button>
-              )
-            })}
+            <div className="flex gap-3 pt-4">
+              <Button
+                onClick={previousQuestion}
+                disabled={currentQuestion === 0}
+                variant="outline"
+                className="flex-1 bg-transparent"
+              >
+                Anterior
+              </Button>
+              <Button onClick={nextQuestion} disabled={!isAnswered} className="flex-1 bg-blue-600 hover:bg-blue-700">
+                {currentQuestion === questions.length - 1 ? "Ver Resultados" : "Siguiente"}
+              </Button>
+            </div>
           </div>
         </Card>
 
-        {isAnswered && (
-          <Button onClick={handleNext} size="lg" className="w-full bg-green-500 hover:bg-green-600">
-            {currentQuestion < shuffledQuestions.length - 1 ? "Siguiente pregunta" : "Ver resultados"}
-          </Button>
-        )}
+        <div className="w-full bg-muted rounded-full h-2 mt-4">
+          <div
+            className="bg-blue-600 h-2 rounded-full transition-all duration-300"
+            style={{
+              width: `${((currentQuestion + 1) / questions.length) * 100}%`,
+            }}
+          />
+        </div>
       </div>
     </div>
   )
