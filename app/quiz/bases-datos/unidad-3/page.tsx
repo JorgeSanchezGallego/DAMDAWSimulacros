@@ -53,8 +53,8 @@ const questions: Question[] = [
   {
     id: 6,
     question: "¿Cuál de las siguientes NO es una restricción semántica?",
-    options: ["NOT NULL", "CHECK", "Integridad Referencial", "AUTO_INCREMENT"],
-    correctAnswer: 3,
+    options: ["NOT NULL", "CHECK", "Integridad de Entidad", "AUTO_INCREMENT"],
+    correctAnswer: 2,
   },
   {
     id: 7,
