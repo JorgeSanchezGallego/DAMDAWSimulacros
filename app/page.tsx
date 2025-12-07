@@ -75,6 +75,8 @@ const subjects = [
       { label: "REPASO Test 2", link: "/quiz/bases-datos/REPASO_Test2" },
       { label: "REPASO Test 3", link: "/quiz/bases-datos/REPASO_Test3" },
       { label: "REPASO Test 4", link: "/quiz/bases-datos/REPASO_Test4" },
+      { label: "REPASO Test 5", link: "/quiz/bases-datos/REPASO_Test5" },
+      { label: "REPASO Test 6", link: "/quiz/bases-datos/REPASO_Test6" },
       { label: "TEST EXTRA", link: "/quiz/bases-datos/test-extra", color: "text-green-500 hover:text-green-400" },
     ],
   },
